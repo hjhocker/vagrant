@@ -1,19 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$script = <<SCRIPT
-echo "I am provisioning..."
-apt-get update && apt-get install -y default-jre
-wget http://apache.mirrors.tds.net/tomcat/tomcat-7/v7.0.62/bin/apache-tomcat-7.0.62.tar.gz
-tar zxvf apache-tomcat-7.*.tar.gz 
-cd apache-tomcat-7.*
-TC=`pwd`
-cd $TC/webapps
-wget http://repo1.maven.org/maven2/org/jolokia/jolokia-war/1.2.3/jolokia-war-1.2.3.war
-mv jolokia-war-1.2.3.war jolokia.war
-$TC/bin/catalina.sh start
-SCRIPT
-
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
